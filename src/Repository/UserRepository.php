@@ -25,6 +25,15 @@ Class UserRepository extends AbstractRepository
 		return $stmt->fetch();
 	}
 
+	public function getByUsername(string $username): ?array
+	{
+		$stmt = $this->db->prepare("SELECT * FROM users WHERE username = :username");
+		$stmt->execute(["username" => $username]);
+
+		return $stmt->fetch();
+
+	}
+
 	public function getAll(): array
 	{
 		return $this->db->query("SELECT * FROM users")->fetchAll();

@@ -8,22 +8,7 @@
   <title>From HTML to Frontend</title>
 </head>
 <body>
-  <header class="container">
-    <div class="d-flex align-items-end">
-      <img src="https://placehold.co/100x100" alt="company logo">
-      <p class="ml-3">Company with super cool name</p>
-    </div>
-    <hr>
-    <div class="d-flex justify-content-between">
-      <ul class="d-flex list-unstyled mb-0">
-        <li class="mx-3">Home</li>
-        <li class="mx-3">New Post</li>
-        <li class="mx-3">Impressum</li>
-      </ul>
-      <p class="mb-0">[Login/Logout]</p>
-    </div>
-    <hr>
-  </header>
+  <?php require __DIR__ . "/components/header.html.php"; ?>
   <main>
     <div class="container my-4">
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -39,7 +24,7 @@
                     <br>
                     <?= $post['created_at'] ?>
                   </p>
-                  <a href="blog/detail?id=<?= $post['post_id'] ?>" class="btn btn-primary mt-2">Read More</a>
+                  <a href="/blog/detail?id=<?= $post['post_id'] ?>" class="btn btn-primary mt-2">Read More</a>
               </div>
             </div>
           </div>
