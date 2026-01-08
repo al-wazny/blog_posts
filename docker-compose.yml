@@ -14,10 +14,10 @@ services:
       - mysql
 
   php:
-    image: php:8.2-fpm
+    build: .
     container_name: php
     volumes:
-      - ./src:/var/www/html
+      - .:/var/www/html
 
   mysql:
     image: mysql:8.0
